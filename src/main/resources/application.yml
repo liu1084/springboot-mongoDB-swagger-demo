@@ -1,0 +1,42 @@
+## 全局配置
+server:
+    tomcat:
+        accesslog:
+            enabled: true
+        uri-encoding: UTF-8
+    servlet:
+        context-path: /
+spring:
+    profiles:
+        active: dev
+    aop:
+        auto: true
+    http:
+        encoding:
+            charset: UTF-8
+    messages:
+        encoding: UTF-8
+        basename: i18n/messages
+    application:
+        name: trinity
+    banner:
+        location: banner.txt
+    thymeleaf:
+        encoding: UTF-8
+        enabled: true
+        cache: false
+        prefix: classpath:/templates/
+        mode: text/html
+
+--- #dev
+spring:
+    data:
+        mongodb:
+            database: user
+            uri: mongodb://localhost:27017/user
+            username:
+            password:
+            host: localhost
+debug: true
+server:
+    port: 8080
